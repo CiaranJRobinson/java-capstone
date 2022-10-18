@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
     //resolve dependencies needed for things to work, autowired pulls them in from repo
     @Autowired
     private UserRepository userRepository;
@@ -22,6 +22,7 @@ public class UserServiceImpl {
     @Autowired
     private PasswordEncoder passwordEncoder;
     //transactional saves to the database and resolves openings
+    @Override
     @Transactional
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
@@ -32,6 +33,7 @@ public class UserServiceImpl {
         return response;
     }
 
+    @Override
     public List<String> userLogin(UserDto userDto){
         List<String> response = new ArrayList<>();
         //Optional is a box to hold the possibility of an entry. This is so if it is null, our code doesn't blow up
@@ -52,6 +54,5 @@ public class UserServiceImpl {
         }
         return  response;
     }
-
 
 }
