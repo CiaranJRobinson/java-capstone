@@ -18,12 +18,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class StepsServiceImpl {
+public class StepsServiceImpl implements StepsService {
     @Autowired
     private StepsRepository stepsRepository;
     @Autowired
     private UserRepository userRepository;
 
+    @Override
     @Transactional
     public void addSteps(StepsDto stepsDto, Long userId){
         Optional<User> userOptional = userRepository.findById(userId);
@@ -32,6 +33,7 @@ public class StepsServiceImpl {
         stepsRepository.saveAndFlush(steps);
     }
 
+    @Override
     public List<StepsDto> getAllStepsByUserId(Long userId){
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isPresent()){
