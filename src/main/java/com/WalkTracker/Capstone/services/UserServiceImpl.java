@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
         User user = new User(userDto);
         //saves info to the db and flushes it
         userRepository.saveAndFlush(user);
-        response.add("User added");
+        response.add("http://localhost:8080/home.html");
         return response;
     }
 
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isPresent()){
             //compare the dto password entry with the repo password
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())){
-                response.add("User logged in successfully");
+                response.add("http://localhost:8080/steps.html");
                 //adds ID to the response so know who's logged in
                 response.add(String.valueOf(userOptional.get().getId()));
             }else{

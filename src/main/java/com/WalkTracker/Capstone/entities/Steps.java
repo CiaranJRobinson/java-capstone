@@ -35,7 +35,7 @@ public class Steps {
         return stepsId;
     }
 
-    public void setUserid(Long userid) {
+    public void setStepsid(Long stepsId) {
         this.stepsId = stepsId;
     }
 
