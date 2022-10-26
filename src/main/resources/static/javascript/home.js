@@ -25,6 +25,7 @@ function handleLogout(){
     for(let i in c){
         document.cookie = /^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     }
+    document.getElementById("displayName").innerHTML = ' ';
 }
 //Login function
 const handleSubmitLogin = async (e) => {
@@ -47,6 +48,7 @@ const handleSubmitLogin = async (e) => {
         document.cookie = `userId=${responseArr[1]}`
         window.location.replace(responseArr[0])
     }
+    document.getElementById("displayName").innerHTML = `Hello ${bodyObj.username}`;
 }
 //Register Function
 const handleSubmitReg = async (e) => {
