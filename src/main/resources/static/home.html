@@ -3,17 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Little Leaves, Many Steps</title>
+    <title>LMany Steps, Little Leaves</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/home.css" type="text/css">
   </head>
   <body>
-    <h1>This is my home page</h1>
-
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5e8b6f; opacity: 0.5;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Many Steps, Little Leaves</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Navigation</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Steps</a>
+                <a class="dropdown-item" href="#">Plant ID</a>
+              </div>
+            </li>
+          </ul>
+          
 
 <!-- Button triggers hidden modals -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-home="login">Login</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-home="register">Register</button>
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-home="login" style="background-color: #5e8b6f;">Login</button>
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-home="register" style="background-color: #5e8b6f;">Register</button>
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -81,6 +97,10 @@
   </div>
 </div>
 </div>
+        </div>
+      </div>
+    </nav>
+
 
 
 

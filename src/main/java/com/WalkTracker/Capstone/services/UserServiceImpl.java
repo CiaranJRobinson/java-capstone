@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         }else{
             response.add("Username of password is invalid");
         }
-        return  response;
+        return response;
     }
 
 }

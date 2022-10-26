@@ -5,6 +5,7 @@ import com.WalkTracker.Capstone.dtos.UserDto;
 import com.WalkTracker.Capstone.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,14 +23,14 @@ public class UserController {
     private UserService userService;
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+    @CrossOrigin
     @PostMapping("/register")
     public List<String> addUser(@RequestBody UserDto userDto) {
         String passHash = passwordEncoder.encode(userDto.getPassword());
         userDto.setPassword(passHash);
-        return userService.addUser((userDto));
+        return userService.addUser(userDto);
     }
-
+    @CrossOrigin
     @PostMapping("/login")
     public List<String> userLogin(@RequestBody UserDto userDto){
         return userService.userLogin(userDto);
