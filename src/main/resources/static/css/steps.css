@@ -23,3 +23,9 @@ img.logo{
     filter: invert(100%);
     max-width: 600px;
 }
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

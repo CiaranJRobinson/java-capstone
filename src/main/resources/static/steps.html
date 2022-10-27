@@ -33,19 +33,35 @@
           
 <h5 id="displayName"> </h5>
 <!-- Button triggers hidden modals -->
-<div id="loggedOut" style="display:block"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#logout" data-bs-home="logout" style="background-color: #5e8b6f;">Login</button>
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-home="register" style="background-color: #5e8b6f;">Register</button>
+<div id="loggedOut" style="display:block"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#logout" data-bs-home="logout" style="background-color: #5e8b6f;">Logout</button>
           </div>
         </div>
       </div>
     </nav>
 <!-- end of nav bar -->
 
-<br><br><br><br><br><br><br>
-<div>
-  <canvas id="lineChart"></canvas>
-</div>
+<br><center>
+<div class="chartCont">
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-header">Step Count</h5>
+
+    <p class="card-text">
+      <canvas id="lineChart"></canvas>
+    <select onchange="filterChart(this)">
+      <option value="">Please select:</option>
+      <option value="1">1 Month</option>
+      <option value="3">3 Month</option>
+      <option value="12">1 Year</option></select>
+    </div>
+    </div></p>
+    <a href="#" class="btn btn-success">Add to Chart</a>
+  </div>
+
+</div></center>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
 
 
 

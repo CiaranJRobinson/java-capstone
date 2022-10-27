@@ -1,30 +1,52 @@
+// const dataValue =;
 
-  const labels = [
+const labels = [
     'January',
     'February',
     'March',
     'April',
     'May',
     'June',
-  ];
-
-  const data = {
-    labels: labels,
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];
+//data
+const data = {
+    labels: ['2021-01-01', '2022-01-01', '2022-11-11'],
     datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+    label: 'Steps through the Year',
+    backgroundColor: 'rgb(97, 133, 100)',
+    borderColor: 'rgb(97, 133, 100)',
+    data: [6, 3, 9],
     }]
-  };
-
-  const config = {
+};
+//config
+const config = {
     type: 'line',
     data: data,
-    options: {}
-  };
+    options: {
+        scales:{
+            x:{
+            type: 'time',
+                time:{
+                unit:
+                    'day'
+                },
+                min: '2022-01-01',
+                max:  new Date()
+            }, 
+            y:{
+                beginAtZero: true
+            }
+            }
+        }
+    };
 
-
+//rendering
   const myChart = new Chart(
     document.getElementById('lineChart'),
     config);
