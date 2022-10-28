@@ -33,7 +33,7 @@
           
 <h5 id="displayName"> </h5>
 <!-- Button triggers hidden modals -->
-<div id="loggedOut" style="display:block"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#logout" data-bs-home="logout" style="background-color: #5e8b6f;">Logout</button>
+<div id="loggedOut" style="display:block"><button type="button" onclick="handleLogout()" class="btn btn-success" style="background-color: #5e8b6f;">Logout</button>
           </div>
         </div>
       </div>
@@ -54,13 +54,45 @@
       <option value="3">3 Month</option>
       <option value="12">1 Year</option>
     </select>
-    <a href="#" class="btn btn-success">Add to Chart</a>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addStepsModal" data-bs-home="addSteps" style="background-color: #5e8b6f;">Add Steps</button>
     </div>
     </div></p>
     
   </div>
 
-</div></center>
+</div>
+
+<!-- Add Steps Modal -->
+<div class="modal fade" id="addStepsModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addModalLabel">Add Steps to Your Chart:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addStepsForm">
+          <div class="mb-3">
+            <label for="username" class="col-form-label">Step Count:</label>
+            <input type="text" class="form-control" id="stepcount">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="col-form-label">Date:</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" id="addStepsBtn">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</center>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>

@@ -1,6 +1,8 @@
 //cookies
 const cookieArr = document.cookie.split("=");
 const userId = cookieArr[1];
+console.log(cookieArr);
+console.log(userId);
 //form info
 const loginUsername = document.getElementById("username");
 const loginPassword = document.getElementById("password");
@@ -12,7 +14,6 @@ const regDOB = document.getElementById("dateOfBirth");
 //submit btns
 const loginSubmit = document.getElementById("loginForm");
 const regSubmit = document.getElementById("regForm");
-
 
 const headers = {
     'Content-Type':'application/json'
@@ -49,6 +50,7 @@ const handleSubmitLogin = async (e) => {
         window.location.replace(responseArr[0])
     }
     document.getElementById("displayName").innerHTML = `Hello ${bodyObj.username}`;
+   
 }
 //Register Function
 const handleSubmitReg = async (e) => {
