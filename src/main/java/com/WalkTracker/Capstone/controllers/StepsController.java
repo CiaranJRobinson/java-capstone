@@ -19,7 +19,8 @@ public class StepsController {
     }
 
     @PostMapping("/user/{userId}")
-    public void addSteps(@RequestBody StepsDto stepsDto,@PathVariable Long userId){
+    public List<StepsDto> addSteps(@RequestBody StepsDto stepsDto, @PathVariable Long userId){
         stepsService.addSteps(stepsDto, userId);
+        return stepsService.getAllStepsByUserId(userId); 
     }
 }

@@ -20,33 +20,35 @@ function handleLogout(){
     }
 }
 
+const addNewSteps = async (e) => {
+    e.preventDefault()
+    let bodyObj = {
+        stepCount : stepsToAdd.value,
+        dateOfWalk: dateOfSteps.value,
+    }
+    
+    const response = await fetch(`${baseUrl1}/user/${userId}`, {
+        method: "POST",
+        body: JSON.stringify(bodyObj),
+        headers: headers
+    })
+        .catch(err => console.error(err.message))
+    const responseArr = await response.json()
 
-// async function getSteps(userId){
-//     await fetch(`${baseUrl1}/user/${userId}`, {
-//         method: "GET",
-//         headers : headers
-//     })
-//         .then(response => response.json())
-//         .then(data => console.log("here is the data:", data))
-//         .catch(err => console.error(err))
-// }
-
-// const createNoteCards = (array) => {
-//     noteContainer.innerHTML = ''
-//     array.forEach(obj => {
-//         //creating div and html inside
-//         let noteCard = document.createElement("div")
-//         noteCard.classList.add("m-2")
-//         noteCard.innerHTML = ``}};
+    console.log(responseArr);
+    if (response.status === 200){
+        window.location.reload();
+        }
+};
 
 //data
 const data = {
-    // labels: ['2021-01-01', '2022-01-01', '2022-11-11'],
+    // labels: grabbed from DB info
     datasets: [{
     label: 'Steps through the Year',
     backgroundColor: 'rgb(97, 133, 100)',
     borderColor: 'rgb(97, 133, 100)',
-    //data: [6000, 3600, 9000, 8220, 9003, 10000, 20324, 45670]
+    //data: filled out below thru DB info
     }]
 };
 //config
@@ -112,4 +114,8 @@ function updateChart(){
         myChart.update();
     })
 };
+
+//makes it bring up your chart info when opening the page
 document.onload = updateChart();
+
+addStepsSubmit.addEventListener("submit", addNewSteps);
