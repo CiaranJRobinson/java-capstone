@@ -18,6 +18,7 @@ function handleLogout(){
     for(let i in c){
         document.cookie = /^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     }
+    window.location.replace("http://localhost:8080/home.html");
 }
 
 const addNewSteps = async (e) => {
@@ -53,7 +54,7 @@ const data = {
 };
 //config
 const config = {
-    type: 'line',  //type of chart
+    type: 'bar',  //type of chart
     data: data, //pulls data array from above
     options: {
         scales:{

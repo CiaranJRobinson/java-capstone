@@ -31,34 +31,36 @@
             </li>
           </ul>
           
-<h5 id="displayName"> </h5>
+
 <!-- Button triggers hidden modals -->
-<div id="loggedOut" style="display:block"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-home="login" style="background-color: #5e8b6f;">Login</button>
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-home="register" style="background-color: #5e8b6f;">Register</button>
-          </div>
+<div id="loggedOut" style="display:block"><button type="button" onclick="handleLogout()" class="btn btn-success" style="background-color: #5e8b6f;">Logout</button>
         </div>
       </div>
     </nav>
 <!-- end of nav bar -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#picUploadModal">
+  Launch demo
+</button>
+-put a card here with description, disappears after modal submit
+-put a card here for populating results, appears after modal submit
+-Restart btn
+-save results?
 
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<!-- Submit Photos Modal -->
+<div class="modal fade" id="picUploadModal" tabindex="-1" aria-labelledby="picModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="loginModalLabel">User Login:</h1>
+        <h1 class="modal-title fs-5" id="picUploadModalLabel">Upload Your Plant Photos:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="loginForm">
+        <form id="picUploadForm">
           <div class="mb-3">
-            <label for="username" class="col-form-label">Username:</label>
-            <input type="text" class="form-control" id="username">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="col-form-label">Password:</label>
-            <input type="password" class="form-control" id="password">
+            <form>
+              <input type="file" multiple />
+              <button type="button">OK</button>
+              </form>
           </div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" id="loginSubmitBtn">Submit</button>
@@ -72,46 +74,10 @@
 </div>
 </div>
 
-<!--Register Modal-->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="registerModalLabel">User Registration:</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="regForm">
-          <div class="mb-3">
-            <label for="username" class="col-form-label">Username:</label>
-            <input type="text" class="form-control" id="regusername">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="col-form-label">Password:</label>
-            <input type="password" class="form-control" id="regpassword">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="col-form-label">Email:</label>
-            <input type="text" class="form-control" id="email">
-          </div>
-          <div class="mb-3">
-            <label for="dateOfBirth" class="col-form-label">Date of Birth:</label>
-            <input type="date" class="form-control" id="dateOfBirth">
-          </div>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" id="regSubmitBtn">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- end of modals -->
-    <!-- background image -->
 
-Home page coming soon
+
+
 <br><br><br><br><br><br><br>
 
 
