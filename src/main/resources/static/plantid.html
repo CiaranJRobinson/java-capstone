@@ -9,9 +9,11 @@
     <!-- favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.ico">
   </head>
+
+
   <body class="bgimage">
     <img class="sticky" src="./images/plant.png">
-<!-- nav bar -->
+  <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4a7a5b; opacity: 0.9;">
       <div class="container-fluid">
         <a class="navbar-brand" href="./home.html"><img class="logo" src="./images/logo.png"></a>
@@ -30,55 +32,60 @@
               </div>
             </li>
           </ul>
-          
 
-<!-- Button triggers hidden modals -->
-<div id="loggedOut" style="display:block"><button type="button" onclick="handleLogout()" class="btn btn-success" style="background-color: #5e8b6f;">Logout</button>
-        </div>
+              <div id="loggedOut" style="display:block"><button type="button" onclick="handleLogout()" class="btn btn-success" style="background-color: #5e8b6f;">Logout</button>
+              </div>
+      </div>
       </div>
     </nav>
 <!-- end of nav bar -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#picUploadModal">
-  Launch demo
-</button>
--put a card here with description, disappears after modal submit
--put a card here for populating results, appears after modal submit
--Restart btn
--save results?
 
 <!-- Submit Photos Modal -->
-<div class="modal fade" id="picUploadModal" tabindex="-1" aria-labelledby="picModalLabel" aria-hidden="true">
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="picUploadModalLabel">Upload Your Plant Photos:</h1>
+        <h1 class="modal-title fs-5" id="uploadModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="picUploadForm">
           <div class="mb-3">
-            <form>
               <input type="file" multiple />
-              <button type="button">OK</button>
               </form>
-          </div>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="loginSubmitBtn">Submit</button>
-        </form>
       </div>
-      <div class="modal-footer">
-        
-      </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="sendIdentification()">Analyze</button>
+            </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end of modal -->
+
+
+<br><br><br><br><br><br><br>
+<div class="row">
+<div class="col-sm-6">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="display-5 ">Want to find out about a plant you saw?</h2>
+      <p>Getting out in nature is relaxing and reduces stress. There's a direct connection to attention fatigue improving from just 10 minutes spent in nature.
+        <br>So you're out on a walk, tracking your steps, and want to find out what a plant you found is! To try the feature, click the button and upload up to 5 photos of the plant you would like to identify. 
+        <br>You can include pictures of leaves, bark, stems, or flowers. </p>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#uploadModal">
+          Upload Plant Photos
+        </button>
     </div>
   </div>
 </div>
 </div>
 
-<!-- end of modals -->
+<div class="results">
+  
+</div>
 
-
-
-<br><br><br><br><br><br><br>
 
 
 

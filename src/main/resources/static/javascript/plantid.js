@@ -13,15 +13,50 @@ function handleLogout(){
 }
 
 
+const plantUpForm = document.querySelector("picUploadForm");
 
-document.querySelector('button').onclick = function sendIdentification() {
+function showResults(res) {
+    const plantArr = res.data.suggestions;
+    console.log("Plant array:", plantArr);
+        for (let i=0; i<plantArr.length; i++){
+            let { common_names, url, wiki_description} = plantArr[i].plant_details;
+            let {plant_name} = plantArr[i].plant_name;
+
+            let newDiv = document.createElement('div');
+            let newCommName = document.createElement('a');
+            let newDescr = document.createElement('p');
+            let newImg = document.createElement('img');
+            let newSciName = document.createElement('p');
+            
+            newImg.src = plantArr[i].similar_images[0].url_small;
+            newCommName.textContent = common_names;
+            newDescr.textContent = wiki_description;
+            newSciName.textContent = plant_name;
+
+            newCommName.href = `${url}`;
+
+            const list = document.createElement("span");
+            const plantresults = document.getElementById("results");
+                list.setAttribute("id", "PlantList");
+                list.setAttribute("class", "PlantCard");
+            
+                list.appendChild(newDiv);
+                list.appendChild(newImg);       
+                newDiv.appendChild(newCommName);
+                list.appendChild(newSciName);
+                list.appendChild(newDescr);
+                plantresults.appendChild(list);
+        }
+}
+
+function sendIdentification() {
     const files = [...document.querySelector('input[type=file]').files];
     const promises = files.map((file) => {
         return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = (event) => {
             const res = event.target.result;
-            console.log(res);
+            // console.log(res);
             resolve(res);
             }
             reader.readAsDataURL(file)
@@ -29,10 +64,10 @@ document.querySelector('button').onclick = function sendIdentification() {
     })
     
     Promise.all(promises).then((base64files) => {
-        console.log(base64files)
+        // console.log(base64files)
             
         const data = {
-        api_key: "-- ask for one: https://web.plant.id/api-access-request/ --",
+        api_key: "GY7rEXZe3tKZMrgQZpIjWb6F24mfMch1R1YwlNAIgBzAEReWg9",
         images: base64files,
         // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
         modifiers: ["crops_fast", "similar_images"],
@@ -56,6 +91,7 @@ document.querySelector('button').onclick = function sendIdentification() {
         .then(response => response.json())
         .then(data => {
         console.log('Success:', data);
+        showResults(data);
         })
         .catch((error) => {
         console.error('Error:', error);
@@ -63,3 +99,5 @@ document.querySelector('button').onclick = function sendIdentification() {
     })
 
 };
+
+plantUpForm.addEventListener("submit", sendIdentification);
