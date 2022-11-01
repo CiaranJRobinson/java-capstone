@@ -56,7 +56,7 @@
       </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="sendIdentification()">Analyze</button>
+              <button type="button" class="btn btn-success" onclick="sendIdentification()" data-bs-dismiss="modal">Analyze</button>
             </div>
     </div>
   </div>
@@ -65,31 +65,41 @@
 <!-- end of modal -->
 
 
-<br><br><br><br><br><br><br>
+<br>
+<!-- Desc Card -->
+<div id="cardContainer">
 <div class="row">
-<div class="col-sm-6">
+<div class="col-sm-6 ">
   <div class="card">
     <div class="card-body">
-      <h2 class="display-5 ">Want to find out about a plant you saw?</h2>
+      <center><h3 class="display-5">Want to find out about a plant?</h3>
       <p>Getting out in nature is relaxing and reduces stress. There's a direct connection to attention fatigue improving from just 10 minutes spent in nature.
         <br>So you're out on a walk, tracking your steps, and want to find out what a plant you found is! To try the feature, click the button and upload up to 5 photos of the plant you would like to identify. 
         <br>You can include pictures of leaves, bark, stems, or flowers. </p>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#uploadModal">
           Upload Plant Photos
-        </button>
+        </button></center>
     </div>
   </div>
 </div>
+<!-- Results Card -->
+    <div class="col-sm-6 scroll" id="toggleVis" style="display:none">
+      <div class="card">
+        <div class="card-body">
+          <center><div id="results">
+            
+          </div></center>
+        </div>
+      </div>
+    </div>
+</div>
 </div>
 
-<div class="results">
-  
-</div>
 
 
 
-
-    <script src="./javascript/plantid.js" type="application/javascript"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./javascript/plantid.js" type="application/javascript"></script>
   </body>
 </html>

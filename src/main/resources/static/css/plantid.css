@@ -24,8 +24,56 @@ img.logo{
     max-width: 600px;
 }
 
+.card{
+
+    /* max-width: 400px; */
+    background-color: rgba(123, 154, 126, 0.8);
+
+}
+
+.scroll {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+#cardContainer{
+    display: inline-block;
+    justify-content: space-around;
+}
+
 .col-sm-6{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    z-index: 6;
+    width: auto;
+    height:auto;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+a:hover {
+    background-color: rgb(43, 67, 48);
+}
+
+#PlantList {
+    width: 350px;
+    height: auto;
+    background:rgba(66, 98, 69, 0.8);
+    border: 3 px solid whitesmoke;
+    margin: 10px;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: small;
+    display: block;
+    align-items: space-evenly;
+
 }

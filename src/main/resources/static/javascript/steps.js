@@ -64,7 +64,7 @@ const config = {
                 unit:
                     'day'
                 },
-                min: '2022-01-01', //shows how far back you want to go
+                min: '2022-10-01', //shows how far back you want to go
                 max:  new Date()  //max is the current date
             }, 
             y:{
