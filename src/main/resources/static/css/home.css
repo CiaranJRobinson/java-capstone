@@ -26,7 +26,7 @@ img.logo{
 
 .card{
 
-    max-width: 400px;
+    max-width: 500px;
     background-color: rgb(232, 232, 232, .5);
 
 }
@@ -35,4 +35,8 @@ img.logo{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.scroll {
+    max-height: 550px;
+    overflow-y: auto;
 }

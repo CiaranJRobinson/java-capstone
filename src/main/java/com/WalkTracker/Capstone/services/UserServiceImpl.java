@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findByUsername(userDto.getUsername());
         //^grabbed the username from the repository if it matches what was given in the Dto
         //checks to see if the username exists in repo
+        //Like a king commanding a squire, "hey repo go fetch this", Service doesnt interact with DB, has repo do it.
         if (userOptional.isPresent()){
             //compare the dto password entry with the repo password
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())){
