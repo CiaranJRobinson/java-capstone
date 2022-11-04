@@ -1,4 +1,4 @@
-//grabs user ID to save results with
+
 let userId = (document.cookie.split('=')[1]);
 userId = parseInt(userId);
 
@@ -17,16 +17,16 @@ const plantUpForm = document.querySelector("picUploadForm");
 
 function showResults(res) {
     const plantArr = res.suggestions;
-    console.log("Plant array:", plantArr);
+    //console.log("Plant array:", plantArr);
         for (let i=0; i<plantArr.length; i++){
             let wiki_description = plantArr[i].plant_details.wiki_description.value;
             let common_names = plantArr[i].plant_details.common_names[0];
             let { url } = plantArr[i].plant_details;
             let plant_name = plantArr[i].plant_details.scientific_name;
 
-            console.log(wiki_description);
-            console.log(plant_name);
-            console.log(common_names);
+            // console.log(wiki_description);
+            // console.log(plant_name);
+            // console.log(common_names);
             
             let newCommName = document.createElement('a');
             let newDescr = document.createElement('p');
@@ -76,10 +76,8 @@ function sendIdentification() {
         const data = {
         api_key: "GY7rEXZe3tKZMrgQZpIjWb6F24mfMch1R1YwlNAIgBzAEReWg9",
         images: base64files,
-        // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
         modifiers: ["crops_fast", "similar_images"],
         plant_language: "en",
-        // plant details docs: https://github.com/flowerchecker/Plant-id-API/wiki/Plant-details
         plant_details: ["common_names",
                         "url",
                         "name_authority",
