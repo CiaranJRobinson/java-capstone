@@ -95,7 +95,7 @@ function updateChart(){
         const url = `http://localhost:8080/api/v1/steps/user/${userId}`
         const response = await fetch(url);
         const datapoints = await response.json() //parsing into json file so js can read it
-        console.log(datapoints);
+        //console.log(datapoints);
         return datapoints;
     };
 //function to grab date and steps from the DB

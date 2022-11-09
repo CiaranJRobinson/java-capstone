@@ -38,7 +38,7 @@ public class StepsServiceImpl implements StepsService {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isPresent()){
             List<Steps> stepsList = stepsRepository.findAllByUserEquals(userOptional.get());
-            return  stepsList.stream().map(steps -> new StepsDto(steps)).collect(Collectors.toList());
+            return stepsList.stream().map(steps -> new StepsDto(steps)).collect(Collectors.toList());
         }
         return Collections.emptyList();
     }

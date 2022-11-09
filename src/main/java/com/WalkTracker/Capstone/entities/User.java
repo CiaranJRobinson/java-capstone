@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity //tells spring that this class is being mapped to a data source
+@Entity 
 @Table(name="Users")
 @Data
 @AllArgsConstructor
@@ -33,12 +33,11 @@ public class User {
     @Column
     private Date dateOfBirth;
 
-    //connect the primary key to foreign key
     @OneToMany(mappedBy = "user", fetch= FetchType.LAZY, cascade = {CascadeType.PERSIST})
     @JsonManagedReference
     private Set<Steps> stepsSet = new HashSet<>();
 
-    //getters and setters created
+    //getters and setters
 
     public Long getId() {
         return id;
